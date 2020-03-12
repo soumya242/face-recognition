@@ -313,13 +313,10 @@ def sendmail():
     EMAIL_ID = "adi1998.tiwari@gmail.com"
     EMAIL_PASS = os.getenv('EMAIL_PASS')
     for id in listId:
-        print(id)
         mycursor.execute(f"select email from teacher_tb where id = '{id}'")
         result = mycursor.fetchall()
-        print(result)
         for i in result:
             email = i[0]
-            print(email)
             emailfrom = EMAIL_ID
             emailto = email
             fileToSend = fileName
